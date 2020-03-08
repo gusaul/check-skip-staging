@@ -1,12 +1,10 @@
 FROM alpine:latest
+LABEL maintainer="Wassu <jancok@linux.com>"
 
-LABEL version="1.0.0"
-LABEL repository="http://github.com/gusaul/check-skip-staging"
-LABEL maintainer="Gusaul"
-LABEL "com.github.actions.name"="Check Skip Staging"
-LABEL "com.github.actions.description"="Check whether PR to master already merged to staging before."
-LABEL "com.github.actions.icon"="git-commit"
-LABEL "com.github.actions.color"="gray-dark"
+LABEL "com.github.actions.name"="Branch Cleanup"
+LABEL "com.github.actions.description"="Delete the branch after a pull request has been merged"
+LABEL "com.github.actions.icon"="activity"
+LABEL "com.github.actions.color"="red"
 
 RUN	apk add --no-cache \
 	bash \
@@ -14,6 +12,6 @@ RUN	apk add --no-cache \
 	curl \
 	jq
 
-COPY execute /usr/bin/execute
+COPY cleanup-pr-branch /usr/bin/cleanup-pr-branch
 
-ENTRYPOINT ["execute"]
+ENTRYPOINT ["cleanup-pr-branch"]
