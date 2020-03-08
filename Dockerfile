@@ -12,6 +12,6 @@ RUN	apk add --no-cache \
 	curl \
 	jq
 
-COPY cleanup-pr-branch /usr/bin/cleanup-pr-branch
+COPY jiancok /usr/bin/jiancok
 
-ENTRYPOINT ["cleanup-pr-branch"]
+ENTRYPOINT ["jiancok"]
