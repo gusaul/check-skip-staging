@@ -9,4 +9,5 @@ LABEL "com.github.actions.icon"="git-commit"
 LABEL "com.github.actions.color"="gray-dark"
 
 COPY entrypoint.sh /entrypoint.sh
+chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
