@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -l
 
 echo "$TOKEN"
 echo "$GITHUB_EVENT_PATH"
