@@ -8,7 +8,11 @@ LABEL "com.github.actions.description"="Check whether PR to master already merge
 LABEL "com.github.actions.icon"="git-commit"
 LABEL "com.github.actions.color"="gray-dark"
 
-RUN apk add --update jq
+RUN	apk add --no-cache \
+	bash \
+	ca-certificates \
+	curl \
+	jq
 
 COPY entrypoint.sh /usr/bin/entrypoint
 
